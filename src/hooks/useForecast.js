@@ -1,6 +1,11 @@
 import { useState } from "react";
 import axios from "axios";
 
+import currentDayForecast from '../dataprep/getCurrentDayDetailedForecast';
+import getUpcomingDaysForecast from '../dataprep/getUpcomingDaysForecast';
+import getCurrentDayForecast from '../dataprep/getCurrentDayForecast';
+
+
 const BASE_URL = 'https://www.metaweather.com/api/location';
 // const BASE_URL = 'http://api.weatherstack.com/';
 // const ACCESS_KEY = process.env.My_ACCESS_KEY;
@@ -33,18 +38,30 @@ const UseForecast = () =>{
       setError("Something went wrong");
       return;
     }
+    // console.log(data)
     return data;
+  };
+  const gatherForecatData = (data)=>{
+    const currDate =  currentDayForecast(data.consolidated_weather[0], data.title);
+    const upcomingForecast =  getUpcomingDaysForecast(data.consolidated_weather);
+    const currDateDetails =  getCurrentDayForecast(data.consolidated_weather[0]);
+
+    setForecast({currDate, currDateDetails, upcomingForecast});
+    setloading(false);
+
   };
   const submitRequest = async location =>{
     setError(false);
     setloading(true);
-    const data = await getWoeid(location);
-    if(!data?.woeid) return;
-    const forecastData = await getForecastData(data.woeid);
-    if(!forecastData) return;
-    console.log(forecastData);
+    const response = await getWoeid(location);
+    if(!response?.woeid) return;
+    const data = await getForecastData(response.woeid);
+    if(!data) return;
+    
+    console.log(data)
+    gatherForecatData(data);
 
-  }
+  };
 return{
     isError,
     isLoading ,
