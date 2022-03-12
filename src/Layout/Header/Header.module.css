@@ -1,5 +1,6 @@
 .heading {
-    padding: 2rem;
+    padding: 2rem 0 0 0;
+    margin-bottom: 0;
     text-align: center;
     font-weight: 900;
     font-size: 2rem;
@@ -8,4 +9,11 @@
 
 .light {
     font-weight: 100;
+}
+
+.subHeader {
+    color: #000;
+    text-align: center;
+    font-style: italic;
+    font-size: 10px;
 }
