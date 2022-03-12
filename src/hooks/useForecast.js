@@ -34,6 +34,7 @@ const UseForecast = () =>{
       setError("Something went wrong");
       return;
     }
+    // console.log(data)
     return data;
   };
   const gatherForecatData = (data)=>{
@@ -52,7 +53,7 @@ const UseForecast = () =>{
     if(!response?.woeid) return;
     const data = await getForecastData(response.woeid);
     if(!data) return;
-    
+    // console.log(data)
     gatherForecatData(data);
 
   };
