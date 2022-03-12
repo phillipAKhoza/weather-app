@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import styles from './Forecast.module.css';
 import CurrentDay from '../CurrentDay';
-import CurrentDayDesc from '../CurrentDayDesc';
+import CurrentDayDesc from '../CurrentDay/CurrentDayDesc';
 import UpcomingDaysForecast from '../UpcomingDaysForecast';
 
 const Forecast = ({forecast}) => (
