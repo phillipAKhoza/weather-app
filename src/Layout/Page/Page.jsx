@@ -9,11 +9,14 @@ import Forecast from '../../components/Forecast';
 import useFocast from '../../hooks/useForecast';
 
 const Page = () => {
-    const {isError, isLoading , forecast, submitRequest} = useFocast();
+    const {isError, isLoading , forecast, submitRequest, resetForm} = useFocast();
 
     const onSubmit = value =>{
         submitRequest(value);
-    }
+    };
+    const backToSearch = () =>{
+        resetForm();
+    };
     return (
         <Fragment>
             <Header />
@@ -28,7 +31,16 @@ const Page = () => {
             </div>
             )}
             {/* Forecast */}
-            {forecast && <Forecast forecast={forecast}/>}
+            {forecast && 
+            <div>
+                <Forecast forecast={forecast}/>
+                <div className={styles.buttonDiv}>
+                    <button type='button' className={styles.button} onClick={backToSearch}>
+                        BACK
+                    </button>
+                </div>
+            </div>
+            }
             
         </Fragment>
     );
