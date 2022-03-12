@@ -6,7 +6,7 @@ import styles from './CurrentDay.module.css';
 
 const CurrentDay = ({weekday,date, location, temperature, weatherIcon, weatherDescription}) => (
     <div className="d-flex">
-        <div className={`${styles.cardInner} d-flex flex-column justify-content-between pt-3 pb-2 pl-0`}>
+        <div className={`${styles.cardInner} d-flex flex-md-column justify-content-between pt-md-3 pb-md-2 pl-md-0 pr-dm-0 pt-5 pr-5`}>
             <div className={styles.textInner}>
                 <h2 className="d-flex align-items-baseline font-weight-lighter mb-1">
                     <img width="18" height="25" src={locationIcon} className="mr-1" alt="location pin icon" />
