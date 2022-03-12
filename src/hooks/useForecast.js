@@ -57,11 +57,15 @@ const UseForecast = () =>{
     gatherForecatData(data);
 
   };
+  const resetForm = ()=>{
+    setForecast(null);
+  }
   return{
       isError,
       isLoading ,
       forecast,
       submitRequest,
+      resetForm,
   };
 }
 
