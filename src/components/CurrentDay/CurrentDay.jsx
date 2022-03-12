@@ -16,7 +16,6 @@ const CurrentDay = ({weekday,date, location, temperature, weatherIcon, weatherDe
             </div>
             <div className={styles.textInner}>
                 <img width="45" src={weatherIcon.replace("'", " ")} alt="icon" />
-                {console.log(weatherIcon)}
                 <h2 className="font-weight-bold mb-1">
                     <span>{temperature}</span>°C
                 </h2>
