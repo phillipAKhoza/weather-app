@@ -7,12 +7,12 @@ const CurrentDay = ({weekday,date, location, temperature, weatherIcon, weatherDe
     <div className="d-flex">
         <div className={`${styles.cardInner} d-flex flex-column justify-content-between pt-3 pb-2 pl-0`}>
             <div className={styles.textInner}>
-                <h2 className="font-weight-bold mb-1">{weekday}</h2>
+                <h2 className="d-flex align-items-baseline font-weight-lighter mb-1">
+                    <img width="18" height="25" src={locationIcon} className="mr-1" alt="location pin icon" />
+                    <span className="font-weight-bold"> {location}</span>
+                </h2>
+                <h4 className="font-weight-bold mb-1">{weekday}</h4>
                 <p className="mb-0">{date}</p>
-                <p className="d-flex align-items-baseline font-weight-lighter mb-1">
-                    <img width="10" height="15" src={locationIcon} className="mr-1" alt="location pin icon" />
-                    <span> {location}</span>
-                </p>
             </div>
             <div className={styles.textInner}>
                 <img width="45" src={weatherIcon.replace("'", " ")} alt="icon" />
