@@ -56,13 +56,12 @@ const UseForecast = () =>{
     gatherForecatData(data);
 
   };
-return{
-    isError,
-    isLoading ,
-    forecast,
-    submitRequest,
-}
-
+  return{
+      isError,
+      isLoading ,
+      forecast,
+      submitRequest,
+  };
 }
 
 export default UseForecast;
