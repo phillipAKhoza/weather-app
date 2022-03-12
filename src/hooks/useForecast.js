@@ -42,9 +42,10 @@ const UseForecast = () =>{
     return data;
   };
   const gatherForecatData = (data)=>{
-    const currDate =  currentDayForecast(data.consolidated_weather[0], data.title);
+    const currDate =  getCurrentDayForecast(data.consolidated_weather[0], data.title);
+    // console.log(currDate);
     const upcomingForecast =  getUpcomingDaysForecast(data.consolidated_weather);
-    const currDateDetails =  getCurrentDayForecast(data.consolidated_weather[0]);
+    const currDateDetails =  currentDayForecast(data.consolidated_weather[0]);
 
     setForecast({currDate, currDateDetails, upcomingForecast});
     setloading(false);
@@ -58,7 +59,7 @@ const UseForecast = () =>{
     const data = await getForecastData(response.woeid);
     if(!data) return;
     
-    console.log(data)
+    // console.log(data)
     gatherForecatData(data);
 
   };
