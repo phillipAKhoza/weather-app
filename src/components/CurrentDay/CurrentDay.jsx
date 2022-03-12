@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import locationIcon from './assets/location-pin.png';
 import styles from './CurrentDay.module.css';
+//import styled from 'styled-components';
 
 const CurrentDay = ({weekday,date, location, temperature, weatherIcon, weatherDescription}) => (
     <div className="d-flex">
