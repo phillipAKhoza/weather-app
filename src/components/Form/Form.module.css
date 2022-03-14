@@ -1,3 +1,7 @@
+.form {
+    padding-bottom: 50px;
+    margin-bottom: 30px;
+}
 .input {
     border-radius: var(--main-border-radius);
     margin-bottom: 1rem;

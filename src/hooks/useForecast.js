@@ -20,7 +20,7 @@ const UseForecast = () =>{
 
     if(!data || data.length === 0){
       setloading(false);
-      setError("Location not Found: Map does not contain all Locations");
+      setError("Location not Found: Check the map bellow for covered Locations");
       return;
     };
 

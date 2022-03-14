@@ -6,6 +6,8 @@ import styles from './Error.module.css';
 const Error = ({ message }) => (
     <div className={`${styles.error} alert position-absolute`} role="alert">
         {message}
+        <br/>
+        <a href="https://www.metaweather.com/map/" target="_blank" rel="noreferrer"> MAP</a>
     </div>
 );
 
