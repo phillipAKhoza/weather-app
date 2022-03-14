@@ -26,6 +26,7 @@
     line-height: initial;
     width: 30%;
     height: 38px;
+    width: 200px;
 }
 
 .button:hover {
@@ -40,8 +41,7 @@
     align-items: center;
     justify-content: center;
     margin: 0 auto;
-    width: 85%;
-    max-width: 675px;
-    /* min-height: 300px; */
-    margin-top: 30px;
+    width: 100%;
+    /* max-width: 675px; */
+    margin: 30px 0 30px 0;
   }
